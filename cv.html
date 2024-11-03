@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Routine CV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #003366; /* Deep blue background */
+            color: #fff;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 2px solid #000;
+            background-color: #fff;
+            color: #000;
+        }
+        .header {
+            text-align: center;
+            color: red; /* Red headline color */
+        }
+        .image {
+            width: 100%;
+            height: 200px;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 200px;
+            color: #aaa;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+        }
+        .totals {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>My Daily Routine</h1>
+    </div>
+
+    <div class="image">
+        <!-- Add image address here -->
+        Image Placeholder
+    </div>
+
+    <p>My name is Sumaya Akther Akhi. I am a student of CSE (Computer Science & Engineering).</p>
+
+    <table id="routineTable">
+        <tr>
+            <th>Day</th>
+            <th>Work</th>
+            <th>Study</th>
+            <th>Varsity</th>
+        </tr>
+        <tr>
+            <td>Sunday</td>
+            <td>4</td>
+            <td>2</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>Monday</td>
+            <td>5</td>
+            <td>2</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>Tuesday</td>
+            <td>5</td>
+            <td>2</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>Wednesday</td>
+            <td>7</td>
+            <td>2</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>Thursday</td>
+            <td>6</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+    </table>
+
+    <div class="totals">
+        <p id="totalWork">Total hours for work = </p>
+        <p id="totalStudy">Total hours for study = </p>
+        <p id="totalVarsity">Total hours for varsity = </p>
+    </div>
+</div>
+
+<script>
+    // Function to calculate total hours for work, study, and varsity
+    function calculateTotals() {
+        let table = document.getElementById("routineTable");
+        let totalWork = 0;
+        let totalStudy = 0;
+        let totalVarsity = 0;
+
+        // Loop through each row in the table (starting from the second row)
+        for (let i = 1; i < table.rows.length; i++) {
+            totalWork += parseInt(table.rows[i].cells[1].innerText);
+            totalStudy += parseInt(table.rows[i].cells[2].innerText);
+            totalVarsity += parseInt(table.rows[i].cells[3].innerText);
+        }
+
+        // Display the totals
+        document.getElementById("totalWork").innerText = "Total hours for work = " + totalWork + " hours";
+        document.getElementById("totalStudy").innerText = "Total hours for study = " + totalStudy + " hours";
+        document.getElementById("totalVarsity").innerText = "Total hours for varsity = " + totalVarsity + " hours";
+    }
+
+    // Call the function to calculate totals when the page loads
+    calculateTotals();
+</script>
+
+</body>
+</html>
